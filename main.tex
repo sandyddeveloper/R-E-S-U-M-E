@@ -1,0 +1,190 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{inter} 
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=1.8cm,
+    bottom=1in,
+    left=2.5cm,
+    right=2.5cm
+}
+
+\setcounter{secnumdepth}{0} % remove section numbering
+\pdfgentounicode=1 % make ATS friendly
+
+\usepackage{enumitem}
+\setlist[itemize]{
+    noitemsep,
+    left=2em
+}
+\setlist[description]{itemsep=0pt}
+\setlist[enumerate]{align=left}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{marvosym}
+\colorlet{icnclr}{gray}
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\color{Sepia}\large\fontseries{black}\selectfont\uppercase}{}{}{\ruleafter}[\global\RemVStrue]
+\titleformat{\subsection}{\fontseries{bold}\selectfont}{}{}{\rvs}
+\titleformat{\subsubsection}{\color{gray}\fontseries{bold}\selectfont}{}{}{}
+
+\usepackage{xhfill} 
+\newcommand\ruleafter[1]{#1~\xrfill[.5ex]{1pt}[gray]} % add rule after title in .5 x-height 
+
+\newif\ifRemVS % remove vspace between \section & \subsection
+\newcommand{\rvs}{
+    \ifRemVS
+        \vspace{-1.5ex}
+    \fi
+    \global\RemVSfalse
+}
+
+\usepackage{fontawesome5} % For FontAwesome icons
+
+\usepackage[bookmarks=false]{hyperref} % [imp!]
+\hypersetup{ 
+    colorlinks=true,
+    urlcolor=Sepia,
+    pdftitle={My Resume},
+}
+
+\usepackage[page]{totalcount}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}	
+\fancyhf{}							
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+%== HEADER ==%
+\begin{center}      
+    {\fontsize{30}{30}\selectfont Santhosh Raj K} \\ \bigskip
+
+    {\color{icnclr}\faMapMarker} Chennai, India \quad 
+    {\color{icnclr}\faEnvelope[regular]} \href{mailto:santhoshrajk1812@gmail.com}{santhoshrajk1812@gmail.com} \quad
+    {\color{icnclr}\Mobilefone} \href{tel:+91 9345693386}{+91 9345693386} 
+    % Optional: LinkedIn or website address
+    % {\color{icnclr}\faLinkedinIn} \href{https://www.linkedin.com/in/santhosh-raj-k-622179316}{santhosh raj k}
+\end{center}
+%==============
+
+\section{About Me}
+A highly motivated full-stack developer with a solid background in Python, Django, and React. Passionate about leveraging problem-solving skills and technical expertise to deliver high-quality solutions. I aim to contribute to impactful projects while continuously improving my knowledge in software development.
+
+\section{Education}
+\subsection{Bachelor of Computer Application \hfill \normalfont 2024}  
+\subsubsection{AGURCHAND MANMULL JAIN COLLEGE, Meenambakkam, Chennai, India}
+\begin{itemize}
+    \item \textbf{GPA}: 8.05/10
+    \item \textbf{Final Project}: Developed an eCommerce application with integrated payment features.
+    \item \textbf{Relevant Coursework}: 
+    \begin{itemize}
+        \item Data Structures
+        \item Database Systems
+        \item Computer Networks
+    \end{itemize}
+\end{itemize}
+
+\subsection{HSC \hfill \normalfont 2021}  
+\subsubsection{ST. JOHN'S MATRICULATION HR SCHOOL, Chennai, India}
+\begin{itemize}
+    \item \textbf{Percentage}: 75\%
+    \item \textbf{Major Coursework}: 
+    \begin{itemize}
+        \item Computer Science
+        \item Mathematics
+        \item Physics and Chemistry
+    \end{itemize}
+\end{itemize}
+
+\subsection{SSLC \hfill \normalfont 2019}  
+\subsubsection{ST. JOHN'S MATRICULATION HR SCHOOL, Chennai, India}
+\begin{itemize}
+    \item \textbf{Percentage}: 70\%
+\end{itemize}
+
+\section{Internships}
+\subsection{Shiash Info Solutions Private Limited (3 Months)} 
+\begin{itemize}
+    \item Developed full-stack web applications using Python and Django.
+    \item Integrated REST APIs and worked on front-end interfaces using HTML, CSS, and JavaScript.
+    \item Enhanced application performance by optimizing database queries.
+\end{itemize}
+
+\section{Projects}
+\subsection{Portfolio Website} 
+\begin{itemize}
+    \item Built a responsive portfolio website using Next.js, showcasing my projects, skills, and experience.
+    \item Integrated smooth transitions and animations for a polished user experience.
+    \item Deployed the website on Vercel for seamless access.
+    \item \textbf{Live link}: \href{https://santhoshdev-seven.vercel.app/}{santhoshdev-seven.vercel.app}
+    \item \textbf{GitHub}: \href{https://github.com/sandyddeveloper/portfolio}{https://github.com/sandyddeveloper/portfolio}
+\end{itemize}
+
+\subsection{Ecommerce Web Application - Trendify}
+\begin{itemize}
+    \item Developed a comprehensive eCommerce platform using Django and PostgreSQL.
+    \item Implemented features like user authentication, product management, and payment gateway integration.
+    \item Optimized authentication modules using threading, improving efficiency by 20\%.
+    \item \textbf{GitHub}: \href{https://github.com/sandyddeveloper/Ecommerce-django.git}{https://github.com/sandyddeveloper/Ecommerce-django.git}
+\end{itemize}
+
+\section{Skills}
+\subsection{Programming Languages}
+\begin{itemize}
+    \item Python
+    \item HTML, CSS, JavaScript
+\end{itemize}
+
+\subsection{Frameworks \& Libraries}
+\begin{itemize}
+    \item Django
+    \item React
+    \item Next.js
+\end{itemize}
+
+\subsection{Databases}
+\begin{itemize}
+    \item PostgreSQL
+    \item MySQL
+    \item MongoDB
+\end{itemize}
+
+\subsection{Tools}
+\begin{itemize}
+    \item Git, GitHub
+    \item Canva, Basic in Figma
+\end{itemize}
+
+\section{Achievements}
+\begin{itemize}
+    \item[\faCertificate] \textbf{Department Topper (2021-2024)} - Being Ranked 1st for 2 years.
+    \item[\faTrophy] \textbf{Intra-College Fest (BIT-SYNC) (2024)} - Awarded for excellence as an active event organizer.
+    % \item[\faCheck] Completed \textbf{INFOYSYS SPRINGBOARD }, \textbf{Info Sys} certification courses.
+\end{itemize}
+\section{Certifications}
+\begin{itemize}
+    \item GTT - Barclays Training - Life-Skills Program 11th August 2023
+    \item INFOSYS Springboard Certificates
+\end{itemize}
+\section{Extracurricular Activities}
+\begin{itemize}
+    \item Organized and participated in multiple college-level technical events (BITSYNC) with over 450 participants.
+    \item Served as Placement Student Coordinator.
+    \item Volunteered in social awareness programs organized by the college.
+    \item Actively participated in various college events as a volunteer.
+\end{itemize}
+
+\section{Industrial Visit}
+\subsection{BSNL}
+Learned about the implementation of modules in switching, transmission, and MDF (Main Distribution Function). The switching module focused on practical call aspects, including creating and receiving calls. The transmission module covered OFC communication, highlighting its advantages.
+
+\end{document}
