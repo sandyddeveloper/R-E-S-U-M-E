@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{inter} 
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=1.5cm,
+    bottom=1in,
+    left=2.5cm,
+    right=2.5cm
+}
+
+\setcounter{secnumdepth}{0} % remove section numbering
+\pdfgentounicode=1 % make ATS friendly
+
+\usepackage{enumitem}
+\setlist[itemize]{
+    noitemsep,
+    left=2em
+}
+\setlist[description]{itemsep=0pt}
+\setlist[enumerate]{align=left}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{marvosym}
+\colorlet{icnclr}{gray}
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\color{Sepia}\large\fontseries{black}\selectfont\uppercase}{}{}{\ruleafter}[\global\RemVStrue]
+\titleformat{\subsection}{\fontseries{bold}\selectfont}{}{}{\rvs}
+\titleformat{\subsubsection}{\color{gray}\fontseries{bold}\selectfont}{}{}{}
+
+\usepackage{xhfill} 
+\newcommand\ruleafter[1]{#1~\xrfill[.5ex]{1pt}[gray]} % add rule after title in .5 x-height 
+
+\newif\ifRemVS % remove vspace between \section & \subsection
+\newcommand{\rvs}{
+    \ifRemVS
+        \vspace{-1.5ex}
+    \fi
+    \global\RemVSfalse
+}
+
+\usepackage{fontawesome5} % For FontAwesome icons
+
+\usepackage[bookmarks=false]{hyperref} % [imp!]
+\hypersetup{ 
+    colorlinks=true,
+    urlcolor=Sepia,
+    pdftitle={My Resume},
+}
+
+\usepackage[page]{totalcount}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}	
+\fancyhf{}							
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+
+%== HEADER ==%
+\begin{center}      
+    {\fontsize{22}{22}\selectfont Santhosh Raj K} \\ 
+
+    {\color{icnclr}\faMapMarker} Chennai, India \quad 
+    {\color{icnclr}\faEnvelope[regular]} \href{mailto:santhoshrajk1812@gmail.com}{santhoshrajk1812@gmail.com} \quad
+    {\color{icnclr}\Mobilefone} \href{tel:+91 9345693386}{+91 9345693386} 
+\end{center}
+%==============
+
+\section{About Me}
+Highly motivated full-stack developer with a strong foundation in Core and Advanced Python, Django, and MySQL.
+Passionate about applying problem-solving abilities and technical expertise to build scalable, efficient, and high-quality solutions.
+Eager to contribute as a Python Developer and grow in a dynamic team environment.
+\section{Education}
+\subsection{Bachelor of Computer Application \hfill \normalfont 2024}  
+\subsubsection{AGURCHAND MANMULL JAIN COLLEGE, Chennai, India}
+\begin{itemize}
+    \item \textbf{GPA}: 8.05/10
+\end{itemize}
+
+\subsection{HSC \hfill \normalfont 2021}  
+\subsubsection{ST. JOHN'S MATRICULATION HR SCHOOL, Chennai, India}
+\begin{itemize}
+    \item \textbf{Percentage}: 75\%
+\end{itemize}
+
+\subsection{SSLC \hfill \normalfont 2019}  
+\subsubsection{ST. JOHN'S MATRICULATION HR SCHOOL, Chennai, India}
+\begin{itemize}
+    \item \textbf{Percentage}: 70\%
+\end{itemize}
+
+\section{Internships}
+\subsection{Shiash Info Solutions (3 Months)}
+\begin{itemize}
+    \item Developed web applications using Python and Django.
+    \item Optimized database queries for performance.
+\end{itemize}
+
+\section{Projects}
+\subsection{Aluminium Pro.} 
+\begin{itemize}
+    \item Integrated predictive models for efficient aluminum manufacturing. 
+    \item \textbf{Live link}: \href{https://aluminium-pro.onrender.com/}{aluminium-pro.onrender.com}
+\end{itemize}
+\subsection{Portfolio Website} 
+\begin{itemize}
+    \item Developed a portfolio site with smooth transitions.
+    \item \textbf{Live link}: \href{https://santhoshdev-seven.vercel.app/}{santhoshdev-seven.vercel.app}
+\end{itemize}
+
+\section{Skills}
+\begin{itemize}
+    \item \textbf{Languages}: Python, HTML, CSS, JavaScript
+    \item \textbf{Frameworks}: Django, React, Next.js
+    \item \textbf{Databases}: MySQL
+    \item \textbf{Tools}: Git, Canva, VS code and  Basic in Figma
+\end{itemize}
+
+\section{Achievements}
+\begin{itemize}
+    \item[\faCertificate] \textbf{Department Topper (2021-2024)} - Ranked 1st for 2 years
+    \item[\faTrophy] \textbf{Intra-College Fest (BIT-SYNC) (2024)} - Awarded for organizing events
+\end{itemize}
+
+
+\section{Extracurricular Activities}
+\begin{itemize}
+    \item Organized and participated in technical events (BITSYNC) with 450+ participants.
+    \item Placement Student Coordinator and volunteer for college events.
+\end{itemize}
+
+\end{document}
