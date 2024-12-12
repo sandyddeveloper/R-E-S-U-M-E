@@ -1,0 +1,220 @@
+\documentclass[12pt, letterpaper]{article}
+
+% Packages:
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=1.0cm,
+    bottom=1.1cm,
+    left=2cm,
+    right=2cm
+}
+\usepackage[explicit]{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={SanthoshRaj's CV},
+    pdfauthor={Santhosh},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage[default, type1]{sourcesanspro} 
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty}
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@empty % Set the custom footer style to empty
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{
+    \needspace{4\baselineskip}
+    \Large\color{primaryColor}
+}{
+}{
+}{
+    \textbf{#1}\hspace{0.15cm}\titlerule[0.8pt]\hspace{-0.1cm}
+}[]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{1 cm, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\color{primaryColor}\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        % \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}%
+  }%
+}%
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+    \placelastupdatedtext
+    \begin{header}
+        \fontsize{30 pt}{30 pt}
+        \textbf{Santhosh Raj K}
+
+% Contact Info:
+\begin{center}
+\fontsize{12}{14}\selectfont
+\faMapMarker* \ Guduvancheri, Chennai \hspace{1em}
+\hspace{1em} \faEnvelope[regular] \ \href{mailto:santhoshrajk1812@gmail.com}{santhoshrajk1812@gmail.com} \hspace{1em}
+\hspace{1em} \faPhone* \ +91 9345693386 \hspace{1em}
+\hspace{1em} \faGithub \ \href{https://github.com/sandyddeveloper}{github.com/sandyddeveloper} \hspace{1em}
+\hspace{1em} \faLink \ \href{https://santhoshraj.onrender.com}{santhoshraj.onrender.com}
+\end{center}
+
+  \end{header}
+% Summary Section:
+\section{Professional Summary}
+Entry-level Python developer with a strong foundation in full-stack development, specializing in Django frameworks and familiar with Flask. Skilled in crafting efficient web applications and experienced in database management with MySQL. Focused on delivering innovative solutions aligned with modern web development standards.
+
+% Education Section:
+\section{Education}
+\textbf{Bachelor of Computer Applications (BCA)} \hfill \textit{Aug 2021 -- Jun 2024}\\
+Agurchand Manmull Jain College, Chennai, India \hfill \textbf{CGPA: 8.3/10}
+
+\textbf{Higher Secondary Certificate (HSC)} \hfill \textit{Jun 2020 -- Apr 2021}\\
+St. John’s Matriculation Higher Secondary School, Chennai \hfill \textbf{Percentage: 76\%}
+
+\textbf{Secondary School Leaving Certificate (SSLC)} \hfill \textit{Jun 2018 -- Apr 2019}\\
+St. John’s Matriculation Higher Secondary School, Chennai \hfill \textbf{Percentage: 69\%}
+
+% Internships Section:
+\section{Internships}
+\textbf{Shiash Info Solutions Private Limited} \hfill \textit{May 2024 -- Jul 2024}\\
+\textit{Role: Python Django Developer}\
+\begin{itemize}[leftmargin=*]
+    \item Designed and implemented web applications using Django framework.
+    \item Integrated MySQL for robust data management.
+\end{itemize}
+
+% Projects Section:
+\section{Projects}
+\textbf{Aluminium-Pro} \hfill \href{https://aluminium-pro.onrender.com}{aluminium-pro.onrender.com}\
+\begin{itemize}[leftmargin=*]
+    \item Simplified aluminum industry processes through a custom web solution.
+    \item Leveraged Django, MySQL, HTML, CSS, and JavaScript.
+    \item Deployed on Render for scalable, real-world usage.
+\end{itemize}
+
+\textbf{Portfolio Website} \hfill \href{https://santhoshdev-seven.vercel.app}{santhoshdev-seven.vercel.app}\
+\begin{itemize}[leftmargin=*]
+    \item Built a personal portfolio with smooth UI transitions and animations.
+    \item Used Next.js, Tailwind CSS, Shadcn, and deployed on Vercel.
+\end{itemize}
+
+% Skills Section:
+\section{Full Stack Skills}
+\textbf{Programming Languages:} Python, HTML, CSS, JavaScript\\
+\textbf{Frameworks:} Django, Flask, React\\
+\textbf{Databases:} MySQL, SQLite3\\
+\textbf{Tools:} GitHub, Canva, Visual Studio Code, Postman, Render
+
+% Achievements Section:
+\section{Achievements}
+\begin{itemize}[leftmargin=*]
+    \item \faCertificate \textbf{Department Topper (2021-2024)}: Ranked 1st for 2 consecutive years.
+    \item \faTrophy \textbf{Intra-College Fest (BIT-SYNC) (2024)}: Recognized for exemplary event organization.
+\end{itemize}
+
+\end{document}
